@@ -12,8 +12,8 @@ const cards = [
 ];
 
 const contextExplainer = `
-The card below is rendered on the server based on the value of \`process.env.CONTEXT\` 
-([docs](https://docs.netlify.com/configure-builds/environment-variables/#build-metadata)):
+ I like to Video Edit, Code, and Dank Meme <br>
+ im Starting to learn AI art turn in to Meme 
 `;
 
 const preDynamicContentExplainer = `
@@ -44,23 +44,16 @@ export default function Page() {
                 />
             </section>
             
-            <section className="flex flex-col items-start gap-3 sm:gap-4">
+            <section className="flex flex-col items-start gap-3  sm:gap-4">
                 <ContextAlert />
-                <h1 className="mb-0"><center>Joeffrey B. Lazarte</center></h1>
-                <p className="text-lg">Get started with Next.js and Netlify in seconds.</p>
-                <Link
-                    href="https://docs.netlify.com/frameworks/next-js/overview/"
-                    className="btn btn-lg btn-primary sm:btn-wide"
-                >
-                    Read the Docs
-                </Link>
+                <h1 className="mb-0 text-center">Joeffrey B. Lazarte</h1>
             </section>
-            {!!ctx && (
-                <section className="flex flex-col gap-4">
-                    <Markdown content={contextExplainer} />
-                    <RuntimeContextCard />
-                </section>
-            )}
+
+            <section className="flex flex-col gap-4">
+                <Markdown content={contextExplainer} />
+
+            </section>
+
             <section className="flex flex-col gap-4">
                 <Markdown content={preDynamicContentExplainer} />
                 <RandomQuote />
@@ -69,13 +62,4 @@ export default function Page() {
             {/* !!cards?.length && <CardsGrid cards={cards} /> */}
         </main>
     );
-}
-
-function RuntimeContextCard() {
-    const title = `Netlify Context: running in ${ctx} mode.`;
-    if (ctx === 'dev') {
-        return <Card title={title} text="Next.js will rebuild any page you navigate to, including static pages." />;
-    } else {
-        return <Card title={title} text="This page was statically-generated at build time." />;
-    }
 }
