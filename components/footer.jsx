@@ -1,12 +1,8 @@
-import Link from 'next/link';
-
 export function Footer() {
     return (
-        <footer className="pt-16 pb-12 sm:pt-24 sm:pb-16">
+        <footer className="pt-16 pb-12 sm:pt-24 sm:pb-16 text-center">
             <p className="text-sm">
-                <Link href="https://docs.netlify.com/frameworks/next-js/overview/" className="underline transition decoration-dashed text-primary underline-offset-8 hover:opacity-80">
-                    Next.js on Netlify
-                </Link>
+                This project is my task for the APPDEVT subject.
             </p>
         </footer>
     );
