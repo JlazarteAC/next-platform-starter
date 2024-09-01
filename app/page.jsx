@@ -32,23 +32,20 @@ const qaData = [
     {
         question: 'What is your Favorite game?',
         answer: 'Elder Ring',
-        questionColor: 'text-blue-600',
-        answerColor: 'text-gray-800'
-
+        questionColor: 'text-black',
+        answerColor: 'text-black'
     },
     {
         question: 'What is your First Steam game?',
         answer: 'Portal 2',
-        questionColor: 'text-blue-600',
-        answerColor: 'text-gray-800'
-
+        questionColor: 'text-black',
+        answerColor: 'text-black'
     },
     {
         question: 'What is your Favorite Meme?',
         answer: 'SpongeBob Squarepants',
-        questionColor: 'text-blue-600',
-        answerColor: 'text-gray-800'
-
+        questionColor: 'text-black',
+        answerColor: 'text-black'
     }
 ];
 
@@ -76,11 +73,11 @@ export default function Page() {
             </section>
 
             <section className="flex flex-col gap-4">
-                <h2>Q&A</h2>
+                <h2 className="text-2xl font-bold text-black">Q&A</h2>
                 {qaData.map((item, index) => (
-                    <div key={index} className="bg-gray-100 p-4 rounded-md shadow-md"  style={{ color: black}}>
-                        <h3 className="text-lg font-semibold" style="color: black;">{item.question}</h3>
-                        <p className="mt-2">{item.answer}</p>
+                    <div key={index} className="bg-gray-100 p-4 rounded-md shadow-md">
+                        <h3 className={`text-lg font-semibold ${item.questionColor}`}>{item.question}</h3>
+                        <p className={`mt-2 ${item.answerColor}`}>{item.answer}</p>
                     </div>
                 ))}
             </section>
