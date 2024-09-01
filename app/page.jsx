@@ -31,15 +31,24 @@ const ctx = getNetlifyContext();
 const qaData = [
     {
         question: 'What is your Favorite game?',
-        answer: 'Elder Ring'
+        answer: 'Elder Ring',
+        questionColor: 'text-blue-600',
+        answerColor: 'text-gray-800'
+
     },
     {
         question: 'What is your First Steam game?',
-        answer: 'Portal 2'
+        answer: 'Portal 2',
+        questionColor: 'text-blue-600',
+        answerColor: 'text-gray-800'
+
     },
     {
         question: 'What is your Favorite Meme?',
-        answer: 'SpongeBob Squarepants'
+        answer: 'SpongeBob Squarepants',
+        questionColor: 'text-blue-600',
+        answerColor: 'text-gray-800'
+
     }
 ];
 
