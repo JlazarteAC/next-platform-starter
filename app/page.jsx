@@ -46,7 +46,7 @@ export default function Page() {
             
             <section className="flex flex-col items-start gap-3  sm:gap-4">
                 <ContextAlert />
-                <h1 className="mb-0 text-center">Joeffrey B. Lazarte</h1>
+                <h1 className="mb-0 text-center" style="text-align: center;">Joeffrey B. Lazarte</h1>
             </section>
 
             <section className="flex flex-col gap-4">
