@@ -44,7 +44,7 @@ export default function Page() {
                 />
             </section>
             
-            <section className="flex flex-col items-start gap-3  sm:gap-4">
+            <section className="flex flex-col items-start gap-3  sm:gap-4" style="text-align: center;">
                 <ContextAlert />
                 <h1 className="mb-0 text-center" style="text-align: center;">Joeffrey B. Lazarte</h1>
             </section>
