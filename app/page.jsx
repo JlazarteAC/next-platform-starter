@@ -3,7 +3,6 @@ import Image from 'next/image'; // Import the Image component
 import { Card } from 'components/card';
 import { RandomQuote } from 'components/random-quote';
 import { Markdown } from 'components/markdown';
-import { ContextAlert } from 'components/context-alert';
 import { getNetlifyContext } from 'utils';
 import Herobanner from 'public/images/IMG_1149.png';
 
@@ -29,6 +28,21 @@ And as always with dynamic content, beware of layout shifts & flicker! (here, we
 
 const ctx = getNetlifyContext();
 
+const qaData = [
+    {
+        question: 'What is your Favorite game?',
+        answer: 'Elder Ring'
+    },
+    {
+        question: 'What is your First Steam game?',
+        answer: 'Portal 2'
+    },
+    {
+        question: 'What is your Favorite Meme?',
+        answer: 'SpongeBob Squarepants'
+    }
+];
+
 export default function Page() {
     return (
         <main className="flex flex-col gap-8 sm:gap-16">
@@ -44,22 +58,24 @@ export default function Page() {
                 />
             </section>
             
-            <section className="flex flex-col items-start gap-3  sm:gap-4 text-center">
-                <ContextAlert />
-                <h1 className="mb-0 text-center" style="text-align: center;">Joeffrey B. Lazarte</h1>
+            <section className="flex flex-col items-start gap-3 sm:gap-4 text-center">
+                <h1 className="mb-0 text-center" style={{ textAlign: 'center' }}>Joeffrey B. Lazarte</h1>
             </section>
 
             <section className="flex flex-col gap-4">
                 <Markdown content={contextExplainer} />
-
             </section>
 
             <section className="flex flex-col gap-4">
-                <Markdown content={preDynamicContentExplainer} />
-                <RandomQuote />
-                <Markdown content={postDynamicContentExplainer} />
+                <h2>Q&A</h2>
+                {qaData.map((item, index) => (
+                    <div key={index} className="bg-gray-100 p-4 rounded-md shadow-md">
+                        <h3 className="text-lg font-semibold">{item.question}</h3>
+                        <p className="mt-2">{item.answer}</p>
+                    </div>
+                ))}
             </section>
-            {/* !!cards?.length && <CardsGrid cards={cards} /> */}
+
         </main>
     );
 }
