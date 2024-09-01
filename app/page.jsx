@@ -78,7 +78,7 @@ export default function Page() {
             <section className="flex flex-col gap-4">
                 <h2>Q&A</h2>
                 {qaData.map((item, index) => (
-                    <div key={index} className="bg-gray-100 p-4 rounded-md shadow-md">
+                    <div key={index} className="bg-gray-100 p-4 rounded-md shadow-md"  style="color: black;">
                         <h3 className="text-lg font-semibold" style="color: black;">{item.question}</h3>
                         <p className="mt-2">{item.answer}</p>
                     </div>
